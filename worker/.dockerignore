@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.venv
+.git
+.pytest_cache
+.ruff_cache
+.mypy_cache
+work_dir
+tmp
+.env
+.env.*
