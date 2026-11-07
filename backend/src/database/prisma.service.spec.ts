@@ -1,0 +1,34 @@
+import { Test, TestingModule } from '@nestjs/testing';
+import { PrismaService } from './prisma.service';
+import { ConfigService } from '../config/config.service';
+
+describe('PrismaService', () => {
+  let service: PrismaService;
+
+  beforeEach(async () => {
+    const mockConfigService = {
+      get: jest.fn().mockImplementation((key: string) => {
+        if (key === 'DATABASE_URL') {
+          return 'postgresql://postgres:postgres@127.0.0.1:54322/postgres';
+        }
+        return undefined;
+      }),
+    };
+
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [
+        PrismaService,
+        {
+          provide: ConfigService,
+          useValue: mockConfigService,
+        },
+      ],
+    }).compile();
+
+    service = module.get<PrismaService>(PrismaService);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+});
