@@ -23,6 +23,7 @@
     "test:e2e": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --config ./test/jest-e2e.json",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
+    "openapi:export": "bun run scripts/export-openapi.ts",
     "check": "bun run lint && bun run typecheck && bun run test && bun run build"
   },
   "dependencies": {

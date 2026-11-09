@@ -15,3 +15,42 @@ export const Plan = {
 } as const
 
 export type Plan = (typeof Plan)[keyof typeof Plan]
+
+
+export const ProjectStatus = {
+  draft: 'draft',
+  uploading: 'uploading',
+  uploaded: 'uploaded',
+  processing: 'processing',
+  ready: 'ready',
+  failed: 'failed'
+} as const
+
+export type ProjectStatus = (typeof ProjectStatus)[keyof typeof ProjectStatus]
+
+
+export const AssetKind = {
+  source_video: 'source_video',
+  audio: 'audio',
+  proxy_video: 'proxy_video',
+  transcript: 'transcript',
+  signals: 'signals',
+  candidates: 'candidates',
+  scores: 'scores',
+  crop_path: 'crop_path',
+  captions: 'captions',
+  clip_video: 'clip_video',
+  thumbnail: 'thumbnail'
+} as const
+
+export type AssetKind = (typeof AssetKind)[keyof typeof AssetKind]
+
+
+export const AssetStatus = {
+  pending: 'pending',
+  uploaded: 'uploaded',
+  ready: 'ready',
+  deleted: 'deleted'
+} as const
+
+export type AssetStatus = (typeof AssetStatus)[keyof typeof AssetStatus]
